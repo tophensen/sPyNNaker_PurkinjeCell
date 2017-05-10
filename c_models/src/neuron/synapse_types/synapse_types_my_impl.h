@@ -63,9 +63,6 @@ static inline void synapse_types_shape_input(
     parameter->my_input_buffer_inhibitory_value = decay_s1615(
         parameter->my_input_buffer_inhibitory_value,
         parameter->my_inh_decay);
-
-    log_debug("HELLO THERE EVERYONE my excitatory value is %i", parameter->my_input_buffer_excitatory_value);
-
 }
 
 

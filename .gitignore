@@ -5,4 +5,4 @@ build/
 application_generated_data_files/
 reports/
 *.pyc
-/REPLACE_WITH_MODULE_NAME.egg-info/
+/sPyNNaker7NewModelTemplate.egg-info/
