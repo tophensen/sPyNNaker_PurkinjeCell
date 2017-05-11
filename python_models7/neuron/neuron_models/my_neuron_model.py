@@ -7,8 +7,8 @@ from spynnaker.pyNN.utilities import utility_calls
 
 from data_specification.enums.data_type import DataType
 
-import numpy
 from enum import Enum
+
 
 class _MY_NEURON_MODEL_TYPES(Enum):
 
@@ -25,6 +25,7 @@ class _MY_NEURON_MODEL_TYPES(Enum):
     @property
     def data_type(self):
         return self._data_type
+
 
 class MyNeuronModel(AbstractNeuronModel):
 
@@ -90,15 +91,16 @@ class MyNeuronModel(AbstractNeuronModel):
 
             # REAL V;
             NeuronParameter(self._v_init,
-                        _MY_NEURON_MODEL_TYPES.V_INIT.data_type),
+                            _MY_NEURON_MODEL_TYPES.V_INIT.data_type),
 
             # REAL I_offset;
             NeuronParameter(self._i_offset,
-                        _MY_NEURON_MODEL_TYPES.I_OFFSET.data_type),
+                            _MY_NEURON_MODEL_TYPES.I_OFFSET.data_type),
 
             # REAL my_parameter;
             NeuronParameter(self._my_neuron_parameter,
-                        _MY_NEURON_MODEL_TYPES.MY_NEURON_PARAMETER.data_type)
+                            _MY_NEURON_MODEL_TYPES.\
+                            MY_NEURON_PARAMETER.data_type)
         ]
 
     def get_neural_parameter_types(self):

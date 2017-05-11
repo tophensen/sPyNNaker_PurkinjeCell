@@ -6,8 +6,8 @@ from spynnaker.pyNN.models.neural_properties.neural_parameter \
 
 from data_specification.enums.data_type import DataType
 
-import numpy
 from enum import Enum
+
 
 class _MY_ADDITIONAL_INPUT_TYPES(Enum):
 
@@ -22,6 +22,7 @@ class _MY_ADDITIONAL_INPUT_TYPES(Enum):
     @property
     def data_type(self):
         return self._data_type
+
 
 class MyAdditionalInput(AbstractAdditionalInput):
 
@@ -75,8 +76,9 @@ class MyAdditionalInput(AbstractAdditionalInput):
         return [
             NeuronParameter(0, DataType.S1615),
             NeuronParameter(
-            self._my_additional_input_parameter,
-            _MY_ADDITIONAL_INPUT_TYPES.MY_ADDITIONAL_INPUT_PARAMETER.data_type)
+                self._my_additional_input_parameter,
+                _MY_ADDITIONAL_INPUT_TYPES.\
+                MY_ADDITIONAL_INPUT_PARAMETER.data_type)
         ]
 
     def get_parameter_types(self):

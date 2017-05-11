@@ -5,8 +5,8 @@ from data_specification.enums.data_type import DataType
 from spynnaker.pyNN.models.neuron.threshold_types.abstract_threshold_type \
     import AbstractThresholdType
 
-import numpy
 from enum import Enum
+
 
 class _MY_THRESHOLD_TYPES(Enum):
 
@@ -22,6 +22,7 @@ class _MY_THRESHOLD_TYPES(Enum):
     @property
     def data_type(self):
         return self._data_type
+
 
 class MyThresholdType(AbstractThresholdType):
     """ A threshold that is a static value
@@ -74,9 +75,10 @@ class MyThresholdType(AbstractThresholdType):
         # threshold_type_t data structure in the C code
         return [
             NeuronParameter(self._threshold_value,
-                        _MY_THRESHOLD_TYPES.THRESHOLD_VALUE.data_type),
+                            _MY_THRESHOLD_TYPES.THRESHOLD_VALUE.data_type),
             NeuronParameter(self._my_threshold_parameter,
-                        _MY_THRESHOLD_TYPES.MY_THRESHOLD_PARAMETER.data_type)
+                            _MY_THRESHOLD_TYPES.\
+                            MY_THRESHOLD_PARAMETER.data_type)
         ]
 
     def get_threshold_parameter_types(self):
