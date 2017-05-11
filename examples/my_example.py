@@ -48,6 +48,7 @@ def create_v_graph(population, title):
             pylab.plot([i[1] for i in v_for_neuron],
                        [i[2] for i in v_for_neuron])
 
+
 p.setup(time_step)
 
 input_pop = p.Population(
