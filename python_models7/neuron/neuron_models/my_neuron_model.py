@@ -99,7 +99,7 @@ class MyNeuronModel(AbstractNeuronModel):
 
             # REAL my_parameter;
             NeuronParameter(self._my_neuron_parameter,
-                            _MY_NEURON_MODEL_TYPES.\
+                            _MY_NEURON_MODEL_TYPES.
                             MY_NEURON_PARAMETER.data_type)
         ]
 

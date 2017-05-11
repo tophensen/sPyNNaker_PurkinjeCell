@@ -77,7 +77,7 @@ class MyAdditionalInput(AbstractAdditionalInput):
             NeuronParameter(0, DataType.S1615),
             NeuronParameter(
                 self._my_additional_input_parameter,
-                _MY_ADDITIONAL_INPUT_TYPES.\
+                _MY_ADDITIONAL_INPUT_TYPES.
                 MY_ADDITIONAL_INPUT_PARAMETER.data_type)
         ]
 

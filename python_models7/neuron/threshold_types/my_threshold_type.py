@@ -77,7 +77,7 @@ class MyThresholdType(AbstractThresholdType):
             NeuronParameter(self._threshold_value,
                             _MY_THRESHOLD_TYPES.THRESHOLD_VALUE.data_type),
             NeuronParameter(self._my_threshold_parameter,
-                            _MY_THRESHOLD_TYPES.\
+                            _MY_THRESHOLD_TYPES.
                             MY_THRESHOLD_PARAMETER.data_type)
         ]
 
