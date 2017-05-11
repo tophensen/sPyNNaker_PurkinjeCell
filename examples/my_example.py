@@ -114,7 +114,6 @@ stdp = p.STDPMechanism(
         my_depression_parameter=0.1),
     weight_dependence=MyWeightDependence(
         w_min=0.0, w_max=10.0, my_parameter=0.5))
-    #mad=True)
 p.Projection(
     input_pop, my_model_stdp_pop,
     p.OneToOneConnector(weights=weight))

@@ -33,6 +33,7 @@ class _EXP_TYPES(Enum):
     def data_type(self):
         return self._data_type
 
+
 def get_exponential_decay_and_init(tau, machine_time_step):
     decay = numpy.exp(numpy.divide(-float(machine_time_step),
                                    numpy.multiply(1000.0, tau)))
@@ -42,6 +43,7 @@ def get_exponential_decay_and_init(tau, machine_time_step):
     decay_scaled = numpy.multiply(decay, scale).astype("uint32")
     init_scaled = numpy.multiply(init, scale).astype("uint32")
     return decay_scaled, init_scaled
+
 
 class MySynapseType(AbstractSynapseType, AbstractContainsUnits):
 
@@ -138,4 +140,3 @@ class MySynapseType(AbstractSynapseType, AbstractContainsUnits):
     @overrides(AbstractContainsUnits.get_units)
     def get_units(self, variable):
         return self._units[variable]
-
