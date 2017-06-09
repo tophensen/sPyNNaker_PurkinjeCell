@@ -38,7 +38,7 @@ before_script:
 script:
   # Disabled as not currently any tests
   # - py.test unittests
-  - flake8 examples python_models7
+  - flake8
   # Disabled as not currently any tests
   # - flake8 unittests
   # TODO Add testing/style-checking of c_models
