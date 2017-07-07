@@ -1,8 +1,6 @@
-
-from data_specification.enums.data_type import DataType
-
+from data_specification.enums import DataType
 from spynnaker.pyNN.models.neuron.plasticity.stdp.weight_dependence\
-    .abstract_weight_dependence import AbstractWeightDependence
+    import AbstractWeightDependence
 
 
 class MyWeightDependence(AbstractWeightDependence):

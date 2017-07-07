@@ -1,14 +1,10 @@
 from spinn_utilities.overrides import overrides
-from spynnaker.pyNN.models.abstract_models.abstract_contains_units import \
-    AbstractContainsUnits
-from spynnaker.pyNN.models.neuron.synapse_types.abstract_synapse_type import \
-    AbstractSynapseType
+from spynnaker.pyNN.models.abstract_models import AbstractContainsUnits
+from spynnaker.pyNN.models.neuron.synapse_types import AbstractSynapseType
 from spynnaker.pyNN.utilities import utility_calls
 from pacman.executor.injection_decorator import inject_items
-from spynnaker.pyNN.models.neural_properties.neural_parameter \
-    import NeuronParameter
-
-from data_specification.enums.data_type import DataType
+from spynnaker.pyNN.models.neural_properties import NeuronParameter
+from data_specification.enums import DataType
 
 import numpy
 from enum import Enum
