@@ -1,8 +1,7 @@
 #include "my_timing_impl.h"
 
-// TODO: Set up any variables here
-accum my_potentiation_parameter;
-accum my_depression_parameter;
+int16_t sin_lookup[SIN_SIZE];
+int32_t peak_time;
 
 //---------------------------------------
 // Functions
@@ -13,13 +12,15 @@ address_t timing_initialise(address_t address) {
     log_info("\tSTDP my timing rule");
 
     // TODO: copy parameters from memory
-    spin1_memcpy(&my_potentiation_parameter, &(address[0]), 4);
-    spin1_memcpy(&my_depression_parameter, &(address[1]), 4);
+    peak_time = address[0];
+    log_info("\t\tPeak time:%d timesteps", peak_time);
 
-    log_info("my potentiation parameter = %k", my_potentiation_parameter);
-    log_info("my depression parameter = %k", my_depression_parameter);
+    // Copy LUTs from following memory
+    address_t lut_address = maths_copy_int16_lut(&address[1], SIN_SIZE, &sin_lookup[0]);
+
     log_info("timing_initialise: completed successfully");
 
     // TODO: Return the address after the last one read
-    return &(address[2]);
+    return lut_address;
+//    return &(address[2]);
 }

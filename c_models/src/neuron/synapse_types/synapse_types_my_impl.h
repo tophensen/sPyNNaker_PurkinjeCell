@@ -23,13 +23,16 @@
 // e.g. 1 bit for 2 possible types such as excitatory and inhibitory
 // This must match the number returned by the python method
 // get_n_synapse_type_bits
-#define SYNAPSE_TYPE_BITS 1
+#define SYNAPSE_TYPE_BITS 2
 
 // TODO: Determine the number of synapse types required
 // (e.g. 2 for excitatory and inhibitory)]
 // This must match the number returned by the python method
 // get_n_synapse_types
-#define SYNAPSE_TYPE_COUNT 2
+#define SYNAPSE_TYPE_COUNT 3
+
+// Only two of these types provide input - the 3rd type is for supervision only
+#define SYNAPSE_INPUT_TYPE_COUNT 2
 
 // TODO: Define the parameters required to compute the synapse shape
 // The number of parameters here should match the number per neuron
@@ -48,7 +51,7 @@ typedef struct synapse_param_t {
 
 // This makes it easy to keep track of which is which
 typedef enum input_buffer_regions {
-    EXCITATORY, INHIBITORY,
+    EXCITATORY, INHIBITORY, SUPERVISION,
 } input_buffer_regions;
 
 //! \brief Shapes the values input into the neurons
@@ -118,6 +121,8 @@ static inline const char *synapse_types_get_type_char(
         return "X";
     } else if (synapse_type_index == INHIBITORY)  {
         return "I";
+    } else if (synapse_type_index == SUPERVISION) {
+        return "S";
     } else {
         log_debug("Did not recognise synapse type %i", synapse_type_index);
         return "?";
